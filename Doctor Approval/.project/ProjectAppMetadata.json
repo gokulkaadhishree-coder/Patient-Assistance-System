@@ -1,0 +1,12 @@
+{
+  "ProjectAppMetadata": {
+    "PatientIntakeFormPage_Approve_click.xaml": {
+      "AppFormId": "idef02fcb2c1e742ce8f264c7ba747e101",
+      "IsAppQueryBuilder": null
+    },
+    "PatientIntakeFormPage_Reject_click.xaml": {
+      "AppFormId": "idef02fcb2c1e742ce8f264c7ba747e101",
+      "IsAppQueryBuilder": null
+    }
+  }
+}

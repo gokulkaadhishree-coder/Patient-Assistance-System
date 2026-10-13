@@ -1,0 +1,153 @@
+{
+  "version": "1.2.0",
+  "settings": {
+    "model": "gpt-5.6-terra",
+    "maxTokens": 128000,
+    "temperature": 0,
+    "engine": "basic-v2",
+    "maxIterations": 25,
+    "mode": "standard"
+  },
+  "inputSchema": {
+    "type": "object",
+    "required": [
+      "name",
+      "age",
+      "gender",
+      "symptoms",
+      "symptomsDuration",
+      "email"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Patient's full name. Source: provided by patient/intake form. Trim whitespace. If unknown, treat as not provided."
+      },
+      "age": {
+        "type": "integer",
+        "description": "Patient's age in years. Must be a positive whole number. Source: provided by patient/intake form."
+      },
+      "gender": {
+        "type": "string",
+        "description": "Patient's gender as reported by the patient (e.g., Male, Female, Other, Prefer not to say). Source: provided by patient/intake form. Do not infer if not given."
+      },
+      "symptoms": {
+        "type": "string",
+        "description": "Description of the symptoms the patient is experiencing, in free text. Source: provided by patient/intake form. May list multiple symptoms separated by commas."
+      },
+      "symptomsDuration": {
+        "type": "string",
+        "description": "How long the patient has been experiencing the symptoms (e.g., '3 days', '2 weeks'). Source: provided by patient/intake form."
+      },
+      "email": {
+        "type": "string",
+        "description": "Patient's email address for correspondence. Format: standard email address (e.g., name@example.com). Source: provided by patient/intake form."
+      }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "required": [
+      "patientInformation",
+      "reportedSymptoms",
+      "symptomDuration",
+      "generalObservation"
+    ],
+    "properties": {
+      "patientInformation": {
+        "type": "string",
+        "description": "Formatted summary of the patient's identifying details: name, age, gender, and email. Built from {{input.name}}, {{input.age}}, {{input.gender}}, {{input.email}}. Plain text, concise, one or two lines."
+      },
+      "reportedSymptoms": {
+        "type": "string",
+        "description": "Plain-language restatement of the symptoms reported by the patient, based only on {{input.symptoms}}. No added medical interpretation or diagnosis."
+      },
+      "symptomDuration": {
+        "type": "string",
+        "description": "Plain-language restatement of how long the patient has had the symptoms, based only on {{input.symptomsDuration}}."
+      },
+      "generalObservation": {
+        "type": "string",
+        "description": "A short, neutral, non-diagnostic observation derived only from the provided symptoms, duration, age, and gender (e.g., noting duration length or symptom pattern). Must NOT include any disease name, diagnosis, or medication/treatment suggestion."
+      }
+    }
+  },
+  "metadata": {
+    "storageVersion": "50.0.0",
+    "isConversational": false,
+    "targetRuntime": "pythonAgent",
+    "showProjectCreationExperience": false
+  },
+  "type": "lowCode",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Patient Query Assistance Agent. You analyze patient-provided intake information and generate a short, structured, professional situation summary for sharing with the patient or healthcare staff.\n\nHard rules:\n- You do NOT diagnose diseases, name possible conditions, or suggest/prescribe medicines or treatments.\n- You do NOT use any tools; you only reason over the provided input fields and produce the structured output.\n- Base every statement only on the information explicitly provided in the input. Never invent or assume facts (e.g., medical history, severity, or causes) that were not given.\n- Always include a clear disclaimer that the report is an informational summary only and is not a medical diagnosis.\n\nWork steps:\n1. Read the patient's Name, Age, Gender, Symptoms, Symptoms Duration, and Email from the input.\n2. Build a short \"Patient Information\" line combining name, age, gender, and email.\n3. Restate the reported symptoms in plain, neutral language (no medical interpretation).\n4. Restate the symptom duration in plain language.\n5. Write one short, neutral \"General Observation\" derived only from the given symptoms, duration, age, and gender (e.g., noting how long symptoms have persisted or a simple non-diagnostic pattern note). Never name a disease, condition, or treatment in this observation.\n\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly: patientInformation, reportedSymptoms, symptomDuration, generalObservation, disclaimer.\n- No extra keys, no markdown, no extra text outside the JSON.\n- Keep every field short, professional, and easy to understand.\n\nFinal reminder: Never diagnose or recommend medicines; always include the non-diagnosis disclaimer; return only the JSON matching outputSchema.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "You are a Patient Query Assistance Agent. You analyze patient-provided intake information and generate a short, structured, professional situation summary for sharing with the patient or healthcare staff.\n\nHard rules:\n- You do NOT diagnose diseases, name possible conditions, or suggest/prescribe medicines or treatments.\n- You do NOT use any tools; you only reason over the provided input fields and produce the structured output.\n- Base every statement only on the information explicitly provided in the input. Never invent or assume facts (e.g., medical history, severity, or causes) that were not given.\n- Always include a clear disclaimer that the report is an informational summary only and is not a medical diagnosis.\n\nWork steps:\n1. Read the patient's Name, Age, Gender, Symptoms, Symptoms Duration, and Email from the input.\n2. Build a short \"Patient Information\" line combining name, age, gender, and email.\n3. Restate the reported symptoms in plain, neutral language (no medical interpretation).\n4. Restate the symptom duration in plain language.\n5. Write one short, neutral \"General Observation\" derived only from the given symptoms, duration, age, and gender (e.g., noting how long symptoms have persisted or a simple non-diagnostic pattern note). Never name a disease, condition, or treatment in this observation.\n\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly: patientInformation, reportedSymptoms, symptomDuration, generalObservation, disclaimer.\n- No extra keys, no markdown, no extra text outside the JSON.\n- Keep every field short, professional, and easy to understand.\n\nFinal reminder: Never diagnose or recommend medicines; always include the non-diagnosis disclaimer; return only the JSON matching outputSchema."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "Generate a concise patient situation report using only the information below.\n\nPatient details:\n- Name: <name>{{input.name}}</name>\n- Age: <age>{{input.age}}</age>\n- Gender: <gender>{{input.gender}}</gender>\n- Symptoms: <symptoms>{{input.symptoms}}</symptoms>\n- Symptoms Duration: <symptoms_duration>{{input.symptomsDuration}}</symptoms_duration>\n- Email: <email>{{input.email}}</email>\n\nSteps:\n1. Summarize the patient's identifying details (name, age, gender, email) into patientInformation.\n2. Restate the symptoms plainly into reportedSymptoms, without adding medical interpretation.\n3. Restate the duration plainly into symptomDuration.\n4. Write one short, neutral, non-diagnostic generalObservation based only on the details above (no disease names, no treatment/medicine suggestions).\n5. Write disclaimer clearly stating this report is an informational summary only, not a medical diagnosis, and recommending the patient consult a licensed healthcare professional.\n\nOutput rules:\n- Return ONLY JSON matching outputSchema exactly with keys: patientInformation, reportedSymptoms, symptomDuration, generalObservation, disclaimer.\n- No extra keys, no markdown, no additional text.\n- If any input field is missing or empty, note that explicitly in the relevant field (e.g., \"Not provided\") rather than guessing.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "Generate a concise patient situation report using only the information below.\n\nPatient details:\n- Name: <name>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.name"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</name>\n- Age: <age>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.age"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</age>\n- Gender: <gender>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.gender"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</gender>\n- Symptoms: <symptoms>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptoms"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</symptoms>\n- Symptoms Duration: <symptoms_duration>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptomsDuration"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</symptoms_duration>\n- Email: <email>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.email"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</email>\n\nSteps:\n1. Summarize the patient's identifying details (name, age, gender, email) into patientInformation.\n2. Restate the symptoms plainly into reportedSymptoms, without adding medical interpretation.\n3. Restate the duration plainly into symptomDuration.\n4. Write one short, neutral, non-diagnostic generalObservation based only on the details above (no disease names, no treatment/medicine suggestions).\n5. Write disclaimer clearly stating this report is an informational summary only, not a medical diagnosis, and recommending the patient consult a licensed healthcare professional.\n\nOutput rules:\n- Return ONLY JSON matching outputSchema exactly with keys: patientInformation, reportedSymptoms, symptomDuration, generalObservation, disclaimer.\n- No extra keys, no markdown, no additional text.\n- If any input field is missing or empty, note that explicitly in the relevant field (e.g., \"Not provided\") rather than guessing."
+        }
+      ]
+    }
+  ],
+  "projectId": "05e72e54-4632-467b-bccf-d3427506238c"
+}

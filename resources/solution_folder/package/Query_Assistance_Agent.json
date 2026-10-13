@@ -1,0 +1,23 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Query Assistance Agent",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "e965a31f-c974-46b7-8a30-1c84801140d7",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "Query Assistance Agent"
+    },
+    "locks": [],
+    "key": "f6731576-0878-427b-b0c9-5791c4e97bbc",
+    "files": []
+  }
+}

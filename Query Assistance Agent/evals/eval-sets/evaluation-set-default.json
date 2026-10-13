@@ -1,0 +1,47 @@
+{
+  "fileName": "evaluation-set-default.json",
+  "id": "a08f4ffa-24ac-4799-b587-ae39d9e70e2f",
+  "name": "Default Evaluation Set",
+  "batchSize": 10,
+  "timeoutMinutes": 20,
+  "evaluatorRefs": [
+    "0dc6385b-95e6-4384-8cdb-c5883fa06be5"
+  ],
+  "evaluations": [
+    {
+      "id": "93e29226-398d-408a-9e1d-8e62644818c3",
+      "name": "Debug Run 9/16/2026, 3:27:06 PM",
+      "inputs": {
+        "name": "Maya Patel",
+        "age": 34,
+        "gender": "Female",
+        "symptoms": "Sore throat, dry cough, and nasal congestion",
+        "symptomsDuration": "5 days",
+        "email": "maya.patel@example.com"
+      },
+      "expectedOutput": {
+        "patientInformation": "Maya Patel, 34, Female, maya.patel@example.com",
+        "reportedSymptoms": "Sore throat, dry cough, and nasal congestion.",
+        "symptomDuration": "Symptoms reported for 5 days.",
+        "generalObservation": "The reported throat, cough, and nasal symptoms have been present for 5 days.",
+        "disclaimer": "This report is an informational summary only and is not a medical diagnosis. Please consult a licensed healthcare professional for diagnosis or treatment."
+      },
+      "expectedAgentBehavior": "",
+      "simulationInstructions": "",
+      "simulateInput": false,
+      "inputGenerationInstructions": "",
+      "simulateTools": false,
+      "evalSetId": "a08f4ffa-24ac-4799-b587-ae39d9e70e2f",
+      "createdAt": "2026-09-16T09:57:06.998Z",
+      "updatedAt": "2026-09-16T09:57:06.998Z",
+      "source": "firstSuccessfulRun"
+    }
+  ],
+  "modelSettings": [],
+  "agentMemoryEnabled": false,
+  "agentMemorySettings": [],
+  "lineByLineEvaluation": false,
+  "createdAt": "2026-09-16T09:55:11.235Z",
+  "updatedAt": "2026-09-16T09:57:06.998Z",
+  "category": 1
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "cbd84485-d451-4c91-971e-23534cb489fe",
+      "input": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Patient's full name. Source: provided by patient/intake form. Trim whitespace. If unknown, treat as not provided."
+          },
+          "age": {
+            "type": "integer",
+            "description": "Patient's age in years. Must be a positive whole number. Source: provided by patient/intake form."
+          },
+          "gender": {
+            "type": "string",
+            "description": "Patient's gender as reported by the patient (e.g., Male, Female, Other, Prefer not to say). Source: provided by patient/intake form. Do not infer if not given."
+          },
+          "symptoms": {
+            "type": "string",
+            "description": "Description of the symptoms the patient is experiencing, in free text. Source: provided by patient/intake form. May list multiple symptoms separated by commas."
+          },
+          "symptomsDuration": {
+            "type": "string",
+            "description": "How long the patient has been experiencing the symptoms (e.g., '3 days', '2 weeks'). Source: provided by patient/intake form."
+          },
+          "email": {
+            "type": "string",
+            "description": "Patient's email address for correspondence. Format: standard email address (e.g., name@example.com). Source: provided by patient/intake form."
+          }
+        },
+        "required": [
+          "name",
+          "age",
+          "gender",
+          "symptoms",
+          "symptomsDuration",
+          "email"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "patientInformation": {
+            "type": "string",
+            "description": "Formatted summary of the patient's identifying details: name, age, gender, and email. Built from {{input.name}}, {{input.age}}, {{input.gender}}, {{input.email}}. Plain text, concise, one or two lines."
+          },
+          "reportedSymptoms": {
+            "type": "string",
+            "description": "Plain-language restatement of the symptoms reported by the patient, based only on {{input.symptoms}}. No added medical interpretation or diagnosis."
+          },
+          "symptomDuration": {
+            "type": "string",
+            "description": "Plain-language restatement of how long the patient has had the symptoms, based only on {{input.symptomsDuration}}."
+          },
+          "generalObservation": {
+            "type": "string",
+            "description": "A short, neutral, non-diagnostic observation derived only from the provided symptoms, duration, age, and gender (e.g., noting duration length or symptom pattern). Must NOT include any disease name, diagnosis, or medication/treatment suggestion."
+          }
+        },
+        "required": [
+          "patientInformation",
+          "reportedSymptoms",
+          "symptomDuration",
+          "generalObservation"
+        ],
+        "title": "Outputs"
+      }
+    }
+  ]
+}

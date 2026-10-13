@@ -1,0 +1,23 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Severity Analysis Agent",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "24772cc4-ac5d-47d6-a100-85458ed8bde1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "Severity Analysis Agent"
+    },
+    "locks": [],
+    "key": "9f9b4b1d-891d-450d-985c-7ce869f667a0",
+    "files": []
+  }
+}

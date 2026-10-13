@@ -1,0 +1,6 @@
+{
+  "escalationAppPrompt": "generate a page for doctor approval which intake Patient name, age, gender, symptoms, sumptoms duration, severity and a reject, approve button",
+  "appUsageType": "1",
+  "isLocalWorkspace": "false",
+  "projectType": "Process"
+}

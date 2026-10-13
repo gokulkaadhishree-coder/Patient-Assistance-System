@@ -1,0 +1,49 @@
+{
+  "docVersion": "1.0.0",
+  "tenants": [
+    {
+      "tenantKey": "5b366ec9-0f3d-4830-8b95-50c0494e5cef",
+      "resources": [
+        {
+          "solutionResourceKey": "b1e9c426-6531-49d4-37d3-08df1390f16a",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "b1e9c426-6531-49d4-37d3-08df1390f16a",
+            "resourceName": "Patient symptoms Severity",
+            "folderKey": "3b45a0c1-bafb-4fff-af84-555a651377f9",
+            "folderFullyQualifiedName": "Shared",
+            "folderPath": "3b45a0c1-bafb-4fff-af84-555a651377f9",
+            "type": "Reference",
+            "kind": "index"
+          }
+        },
+        {
+          "solutionResourceKey": "724ff652-3e95-4465-9f0e-55d2b2b93ab4",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "724ff652-3e95-4465-9f0e-55d2b2b93ab4",
+            "resourceName": "Patient Severity",
+            "folderKey": "3b45a0c1-bafb-4fff-af84-555a651377f9",
+            "folderFullyQualifiedName": "Shared",
+            "folderPath": "3b45a0c1-bafb-4fff-af84-555a651377f9",
+            "type": "Reference",
+            "kind": "bucket"
+          }
+        },
+        {
+          "solutionResourceKey": "7105a329-abf7-4bd9-b526-38d3bf960c0c",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "7105a329-abf7-4bd9-b526-38d3bf960c0c",
+            "resourceName": "snjeet28@gmail.com",
+            "folderKey": "acad2327-6ba9-4bfc-9248-1b46a4b1397d",
+            "folderFullyQualifiedName": "24156066@kiit.ac.in\u0027s workspace",
+            "folderPath": "8955af36-8061-4a85-9aec-76b2d93bd321.acad2327-6ba9-4bfc-9248-1b46a4b1397d",
+            "type": "Reference",
+            "kind": "connection"
+          }
+        }
+      ]
+    }
+  ]
+}

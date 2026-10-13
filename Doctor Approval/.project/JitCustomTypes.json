@@ -1,0 +1,27 @@
+{
+  "version": "3.0.0.0",
+  "bundleHash": "256EnAeqaP32JAPwQAHCbNEeyn9sQk6E1bZin61hkA",
+  "addedAssemblyNames": [],
+  "discardedAssemblyNames": [
+    "Apps.action.gdlThoU3wg",
+    "Apps.form.PatientIntakeFormPage.Expressions.SJyFZ4K6E1O13Gew22qcw9v1",
+    "Apps.form.PatientIntakeFormPage.gVR38DxsU3wg",
+    "Apps.form.PatientIntakeFormPage.g6AG2EBsU3wg",
+    "Apps.form.MainPage.gWXRRBoU3wg",
+    "Apps.form.MainPage.Expressions.S7WfQ1SvGRG1bODcj1vBm8",
+    "Apps.form.PatientIntakeFormPage.Expressions.Z0fBY1AzSUL1oVYcG39GLxb3",
+    "Apps.form.PatientIntakeFormPage.gZ2ISFRsU3wg",
+    "Apps.form.PatientIntakeFormPage.Expressions.s1FzQ1jnSKH1Megaw3GeY644",
+    "Apps.form.PatientIntakeFormPage.Expressions.nY2AI3jBfzK1V41N92RizPc3",
+    "Apps.form.PatientIntakeFormPage.grgqjJxsU3wg"
+  ],
+  "discardedAssemblyReplacements": {
+    "Apps.action.gdlThoU3wg": "Apps.action.gnFLRxoU3wg",
+    "Apps.form.PatientIntakeFormPage.gVR38DxsU3wg": "Apps.form.PatientIntakeFormPage.g6AG2EBsU3wg",
+    "Apps.form.PatientIntakeFormPage.g6AG2EBsU3wg": "Apps.form.PatientIntakeFormPage.gZ2ISFRsU3wg",
+    "Apps.form.MainPage.gWXRRBoU3wg": null,
+    "Apps.form.PatientIntakeFormPage.gZ2ISFRsU3wg": "Apps.form.PatientIntakeFormPage.grgqjJxsU3wg",
+    "Apps.form.PatientIntakeFormPage.grgqjJxsU3wg": "Apps.form.PatientIntakeFormPage.gFQs9R8U3wg"
+  },
+  "assembliesJitInfo": {}
+}

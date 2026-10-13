@@ -1,0 +1,50 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Doctor Approval",
+    "kind": "process",
+    "type": "webApp",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "7601f8a7-5932-408d-99d7-91097e0b0220",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "Doctor Approval",
+        "kind": "package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "WebApp",
+      "name": "Doctor Approval",
+      "package": {
+        "key": "0d46b89c-b330-43bb-86d4-3cdb3a1a679d"
+      },
+      "packageName": "Patient.Assistance.System.webApp.Doctor.Approval",
+      "jobPriority": "Medium",
+      "hiddenForAttendedUser": true,
+      "alwaysRunning": true,
+      "autoStartProcess": false,
+      "jobRecording": "Disabled",
+      "targetFrameworkValue": "Portable",
+      "duration": 40,
+      "frequency": 500,
+      "quality": 100,
+      "remoteControlAccess": "None",
+      "robotSize": "Automatic",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "tags": []
+    },
+    "locks": [],
+    "key": "7d659e04-c8c2-478c-8a7f-6112b61f1f55",
+    "files": []
+  }
+}

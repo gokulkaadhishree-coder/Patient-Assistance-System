@@ -1,0 +1,49 @@
+{
+  "docVersion": "1.0.0",
+  "tenants": [
+    {
+      "tenantKey": "7e118882-ca84-46e3-bd0a-7289d20ba41c",
+      "resources": [
+        {
+          "solutionResourceKey": "7105a329-abf7-4bd9-b526-38d3bf960c0c",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "29fc0500-fb75-4493-9082-b4f906cefed1",
+            "resourceName": "gokulkaadhishree@gmail.com",
+            "folderKey": "84334ac6-da30-491e-b1db-cb696be803fd",
+            "folderFullyQualifiedName": "gokulkaadhishree@gmail.com\u0027s workspace",
+            "folderPath": "26df63d0-95ba-4b54-a2d3-5771acd64669.84334ac6-da30-491e-b1db-cb696be803fd",
+            "type": "Reference",
+            "kind": "connection"
+          }
+        },
+        {
+          "solutionResourceKey": "b2b1774a-5276-4fe0-d68d-08df126a35df",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "b2b1774a-5276-4fe0-d68d-08df126a35df",
+            "resourceName": "patient_dataset",
+            "folderKey": "7962c79d-8919-4185-b73e-b10044af06b5",
+            "folderFullyQualifiedName": "Shared",
+            "folderPath": "7962c79d-8919-4185-b73e-b10044af06b5",
+            "type": "Reference",
+            "kind": "index"
+          }
+        },
+        {
+          "solutionResourceKey": "291c5d99-e02e-4591-86af-6dad114f55aa",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "291c5d99-e02e-4591-86af-6dad114f55aa",
+            "resourceName": "gokulkaadhishree@gmail.com #2",
+            "folderKey": "7962c79d-8919-4185-b73e-b10044af06b5",
+            "folderFullyQualifiedName": "Shared",
+            "folderPath": "7962c79d-8919-4185-b73e-b10044af06b5",
+            "type": "Reference",
+            "kind": "connection"
+          }
+        }
+      ]
+    }
+  ]
+}

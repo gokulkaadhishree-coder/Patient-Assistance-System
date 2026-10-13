@@ -1,0 +1,25 @@
+{
+  "$resourceType": "context",
+  "id": "b72eaeb2-210a-42d5-b595-f82dc62e90f4",
+  "referenceKey": "b2b1774a-5276-4fe0-d68d-08df126a35df",
+  "name": "patient_dataset",
+  "description": "has info about patient symptoms",
+  "contextType": "index",
+  "folderPath": "solution_folder",
+  "indexName": "patient_dataset",
+  "settings": {
+    "query": {
+      "description": "The query for the Semantic strategy.",
+      "variant": "dynamic"
+    },
+    "threshold": 0,
+    "resultCount": 3,
+    "retrievalMode": "semantic",
+    "folderPathPrefix": {
+      "variant": "static"
+    },
+    "fileExtension": {
+      "value": "All"
+    }
+  }
+}

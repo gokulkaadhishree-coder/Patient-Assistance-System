@@ -1,0 +1,29 @@
+{
+  "SolutionId": "6c9f95de-1cc1-4198-bffc-08df14c08e78",
+  "Projects": [
+    {
+      "ProjectId": "cf753790-2955-480a-908f-25e68e18d740",
+      "ProjectRelativePath": "Maestro BPMN/project.uiproj"
+    },
+    {
+      "ProjectId": "161b13db-7b0f-471a-b76f-3032d58a6078",
+      "ProjectRelativePath": "Severity Analysis Agent/project.uiproj"
+    },
+    {
+      "ProjectId": "f402d046-354f-49d1-9d8e-3c74748f4f3d",
+      "ProjectRelativePath": "Email Generation Agent/project.uiproj"
+    },
+    {
+      "ProjectId": "05e72e54-4632-467b-bccf-d3427506238c",
+      "ProjectRelativePath": "Query Assistance Agent/project.uiproj"
+    },
+    {
+      "ProjectId": "b1f7ed89-4644-4ed6-a7c9-db13237c9708",
+      "ProjectRelativePath": "Doctor Approval/project.uiproj"
+    },
+    {
+      "ProjectId": "ef1f0489-57d9-499e-95ff-e296e791ddfb",
+      "ProjectRelativePath": "Send Email/project.uiproj"
+    }
+  ]
+}

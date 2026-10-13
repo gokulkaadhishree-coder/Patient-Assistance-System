@@ -1,0 +1,45 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Query Assistance Agent",
+    "kind": "process",
+    "type": "agent",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "e965a31f-c974-46b7-8a30-1c84801140d7",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "Query Assistance Agent",
+        "kind": "package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "Agent",
+      "name": "Query Assistance Agent",
+      "package": {
+        "key": "f6731576-0878-427b-b0c9-5791c4e97bbc"
+      },
+      "packageName": "Patient.Assistance.System.agent.Query.Assistance.Agent",
+      "hiddenForAttendedUser": false,
+      "alwaysRunning": false,
+      "autoStartProcess": false,
+      "targetFrameworkValue": "Portable",
+      "agentMemory": false,
+      "isConversational": false,
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "tags": []
+    },
+    "locks": [],
+    "key": "658a6770-c0d7-4536-be2f-7b43737a8116",
+    "files": []
+  }
+}

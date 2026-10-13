@@ -1,0 +1,207 @@
+{
+  "version": "1.2.0",
+  "settings": {
+    "model": "gpt-5.6-terra",
+    "maxTokens": 128000,
+    "temperature": 0,
+    "engine": "basic-v2",
+    "maxIterations": 25,
+    "mode": "standard"
+  },
+  "inputSchema": {
+    "type": "object",
+    "required": [
+      "name",
+      "age",
+      "gender",
+      "symptoms",
+      "symptomsDuration",
+      "severity",
+      "action"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Patient's full name. Source: provided by patient/intake form. Used as the greeting name in the generated email (e.g., 'Dear <name>,'). Trim whitespace."
+      },
+      "age": {
+        "type": "integer",
+        "description": "Patient's age in years. Positive whole number. Source: provided by patient/intake form."
+      },
+      "gender": {
+        "type": "string",
+        "description": "Patient's gender as reported (e.g., Male, Female, Other, Prefer not to say). Source: provided by patient/intake form. Do not infer if not given."
+      },
+      "symptoms": {
+        "type": "string",
+        "description": "Description of the symptoms the patient is experiencing, free text, may list multiple symptoms separated by commas. Source: provided by patient/intake form."
+      },
+      "symptomsDuration": {
+        "type": "string",
+        "description": "How long the patient has been experiencing the symptoms (e.g., '3 days', '2 weeks'). Source: provided by patient/intake form."
+      },
+      "severity": {
+        "type": "string",
+        "description": "Patient- or staff-reported severity level of the symptoms (e.g., Mild, Moderate, Severe). Source: provided by patient/intake form. Use exactly as given; do not upgrade or downgrade the level."
+      },
+      "action": {
+        "type": "string",
+        "description": "The recommended next action or instruction to communicate to the patient (e.g., 'Schedule a follow-up appointment', 'Visit the ER immediately', 'Continue monitoring at home'). Source: provided by healthcare staff/intake form. Use exactly as given; do not invent a different action."
+      }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "required": [
+      "Email_Body"
+    ],
+    "properties": {
+      "Email_Body": {
+        "type": "string",
+        "description": "The complete, ready-to-send email as a single plain-text block. Must start with a greeting line 'Dear {{input.name}},'. Then, on its own new line, each required detail must appear as 'Label: value' — specifically Age:, Gender:, Symptoms:, Symptom Duration:, Severity:, each from the matching input field, one per line with a line break (\\n) after every line (never combined on the same line). Then a blank line, followed by a 'Recommended Action:' line with the value from {{input.action}}. End with a polite closing line 'Best regards,' followed by the fixed sign-off 'Patient Assistance System' on the next line. Use \\n for every line break; plain text only, no Markdown bold, no HTML tags, no extra commentary outside the email itself."
+      }
+    }
+  },
+  "metadata": {
+    "storageVersion": "50.0.0",
+    "isConversational": false,
+    "targetRuntime": "pythonAgent",
+    "showProjectCreationExperience": false
+  },
+  "type": "lowCode",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Patient Email Generation Agent. You take structured patient intake details and produce a single, neatly formatted, ready-to-send email summarizing the patient's situation and the recommended next action.\n\nHard rules:\n- You do NOT use any tools; you only reason over the provided input fields and produce the email text.\n- Base every statement only on the information explicitly provided in the input. Never invent, upgrade, or downgrade any detail (symptoms, severity, or action) that was not given exactly as provided.\n- You do NOT diagnose diseases or suggest medicines/treatments beyond restating the given action.\n- The entire result must be a single output variable named Email_Body containing the full email as plain text.\n- Keep the email simple and normal: plain text only, no Markdown bold, no asterisks, no HTML tags, no bullet symbols. Every required detail (Age, Gender, Symptoms, Symptom Duration, Severity) MUST be on its own new line — never combine two details on the same line.\n\nWork steps:\n1. Read Name, Age, Gender, Symptoms, Symptoms Duration, Severity, and Action from the input.\n2. Start the email with a plain greeting: \"Dear <Name>,\".\n3. On separate new lines, present each detail as \"Label: value\" in this order: Age:, Gender:, Symptoms:, Symptom Duration:, Severity:. One label per line, each ending with a line break.\n4. Leave a blank line, then add a \"Recommended Action:\" line stating the action exactly as provided.\n5. End with a closing \"Best regards,\" followed by the fixed sign-off line \"Patient Assistance System\".\n6. Use \\n for every line break so the structure renders cleanly; no bold, no HTML tags, no bullet symbols, no extra commentary outside the email itself.\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly: a single key \"Email_Body\" containing the full plain-text email.\n- No extra keys, no extra text outside the JSON.\n\nFinal reminder: Always produce one simple, plain-text email in the single \"Email_Body\" output field, with every required detail on its own new line, using only the exact facts provided, ending with the stated action and a plain closing signed \"Patient Assistance System\".",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "You are a Patient Email Generation Agent. You take structured patient intake details and produce a single, neatly formatted, ready-to-send email summarizing the patient's situation and the recommended next action.\n\nHard rules:\n- You do NOT use any tools; you only reason over the provided input fields and produce the email text.\n- Base every statement only on the information explicitly provided in the input. Never invent, upgrade, or downgrade any detail (symptoms, severity, or action) that was not given exactly as provided.\n- You do NOT diagnose diseases or suggest medicines/treatments beyond restating the given action.\n- The entire result must be a single output variable named Email_Body containing the full email as plain text.\n- Keep the email simple and normal: plain text only, no Markdown bold, no asterisks, no HTML tags, no bullet symbols. Every required detail (Age, Gender, Symptoms, Symptom Duration, Severity) MUST be on its own new line — never combine two details on the same line.\n\nWork steps:\n1. Read Name, Age, Gender, Symptoms, Symptoms Duration, Severity, and Action from the input.\n2. Start the email with a plain greeting: \"Dear <Name>,\".\n3. On separate new lines, present each detail as \"Label: value\" in this order: Age:, Gender:, Symptoms:, Symptom Duration:, Severity:. One label per line, each ending with a line break.\n4. Leave a blank line, then add a \"Recommended Action:\" line stating the action exactly as provided.\n5. End with a closing \"Best regards,\" followed by the fixed sign-off line \"Patient Assistance System\".\n6. Use \\n for every line break so the structure renders cleanly; no bold, no HTML tags, no bullet symbols, no extra commentary outside the email itself.\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly: a single key \"Email_Body\" containing the full plain-text email.\n- No extra keys, no extra text outside the JSON.\n\nFinal reminder: Always produce one simple, plain-text email in the single \"Email_Body\" output field, with every required detail on its own new line, using only the exact facts provided, ending with the stated action and a plain closing signed \"Patient Assistance System\"."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "Generate one simple, plain-text patient email using only the information below.\n\nPatient details:\n- Name: <name>{{input.name}}</name>\n- Age: <age>{{input.age}}</age>\n- Gender: <gender>{{input.gender}}</gender>\n- Symptoms: <symptoms>{{input.symptoms}}</symptoms>\n- Symptoms Duration: <symptoms_duration>{{input.symptomsDuration}}</symptoms_duration>\n- Severity: <severity>{{input.severity}}</severity>\n- Recommended Action: <action>{{input.action}}</action>\n\nSteps:\n1. Open with \"Dear {{input.name}},\".\n2. On separate new lines, add each of the following, ONE detail per line, plain text (no bold, no asterisks):\n   - Age: {{input.age}}\n   - Gender: {{input.gender}}\n   - Symptoms: {{input.symptoms}}\n   - Symptom Duration: {{input.symptomsDuration}}\n   - Severity: {{input.severity}}\n3. Leave a blank line, then add a \"Recommended Action:\" line with the value from {{input.action}}.\n4. Close with \"Best regards,\" followed by the fixed sign-off \"Patient Assistance System\" on the next line.\n5. Use \\n for every line break between the greeting, each detail line, the action, and the closing — no HTML, no bullet symbols, no bold formatting.\n\nOutput rules:\n- Return ONLY JSON matching outputSchema exactly: {\"Email_Body\": \"<full email text>\"}.\n- No extra keys, no additional commentary outside the JSON.\n- If any input field is missing or empty, write \"Not provided\" in its place within the email rather than guessing.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "Generate one simple, plain-text patient email using only the information below.\n\nPatient details:\n- Name: <name>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.name"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</name>\n- Age: <age>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.age"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</age>\n- Gender: <gender>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.gender"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</gender>\n- Symptoms: <symptoms>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptoms"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</symptoms>\n- Symptoms Duration: <symptoms_duration>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptomsDuration"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</symptoms_duration>\n- Severity: <severity>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.severity"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</severity>\n- Recommended Action: <action>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.action"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</action>\n\nSteps:\n1. Open with \"Dear "
+        },
+        {
+          "type": "variable",
+          "rawString": "input.name"
+        },
+        {
+          "type": "simpleText",
+          "rawString": ",\".\n2. On separate new lines, add each of the following, ONE detail per line, plain text (no bold, no asterisks):\n   - Age: "
+        },
+        {
+          "type": "variable",
+          "rawString": "input.age"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "\n   - Gender: "
+        },
+        {
+          "type": "variable",
+          "rawString": "input.gender"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "\n   - Symptoms: "
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptoms"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "\n   - Symptom Duration: "
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptomsDuration"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "\n   - Severity: "
+        },
+        {
+          "type": "variable",
+          "rawString": "input.severity"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "\n3. Leave a blank line, then add a \"Recommended Action:\" line with the value from "
+        },
+        {
+          "type": "variable",
+          "rawString": "input.action"
+        },
+        {
+          "type": "simpleText",
+          "rawString": ".\n4. Close with \"Best regards,\" followed by the fixed sign-off \"Patient Assistance System\" on the next line.\n5. Use \\n for every line break between the greeting, each detail line, the action, and the closing — no HTML, no bullet symbols, no bold formatting.\n\nOutput rules:\n- Return ONLY JSON matching outputSchema exactly: {\"Email_Body\": \"<full email text>\"}.\n- No extra keys, no additional commentary outside the JSON.\n- If any input field is missing or empty, write \"Not provided\" in its place within the email rather than guessing."
+        }
+      ]
+    }
+  ],
+  "projectId": "f402d046-354f-49d1-9d8e-3c74748f4f3d"
+}

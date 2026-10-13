@@ -1,0 +1,41 @@
+{
+  "fileName": "evaluation-set-default.json",
+  "id": "897b4534-4f8a-46e9-b25f-74c6fa8679c9",
+  "name": "Default Evaluation Set",
+  "batchSize": 10,
+  "timeoutMinutes": 20,
+  "evaluatorRefs": [
+    "1638e05e-e3ab-4ce1-91b7-bb068623d101"
+  ],
+  "evaluations": [
+    {
+      "id": "ef754aff-c9b5-43b8-9b7e-399171ed5bec",
+      "name": "Debug Run 9/16/2026, 3:46:25 PM",
+      "inputs": {
+        "Gender": "Female",
+        "Symptoms": "Sudden crushing chest pain spreading to the left arm and jaw, shortness of breath, sweating, and nausea.",
+        "Symptoms_Duration": "Started 30 minutes ago and is ongoing."
+      },
+      "expectedOutput": {
+        "Severity": "Critical",
+        "Action": "Emergency medical attention is required"
+      },
+      "expectedAgentBehavior": "",
+      "simulationInstructions": "",
+      "simulateInput": false,
+      "inputGenerationInstructions": "",
+      "simulateTools": false,
+      "evalSetId": "897b4534-4f8a-46e9-b25f-74c6fa8679c9",
+      "createdAt": "2026-09-16T10:16:25.186Z",
+      "updatedAt": "2026-09-16T10:16:25.186Z",
+      "source": "firstSuccessfulRun"
+    }
+  ],
+  "modelSettings": [],
+  "agentMemoryEnabled": false,
+  "agentMemorySettings": [],
+  "lineByLineEvaluation": false,
+  "createdAt": "2026-09-16T10:04:01.568Z",
+  "updatedAt": "2026-09-16T10:16:25.186Z",
+  "category": 1
+}

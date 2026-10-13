@@ -1,0 +1,43 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Maestro BPMN",
+    "kind": "process",
+    "type": "processOrchestration",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "324ff897-68a8-4599-8a3c-d4986df476df",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "Maestro BPMN",
+        "kind": "package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "ProcessOrchestration",
+      "name": "Maestro BPMN",
+      "package": {
+        "key": "7350fcef-d776-4be0-95e5-521586ff65cf"
+      },
+      "packageName": "Patient.Assistance.System.agentic.Maestro.BPMN",
+      "hiddenForAttendedUser": false,
+      "alwaysRunning": false,
+      "autoStartProcess": false,
+      "targetFrameworkValue": "Portable",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "tags": []
+    },
+    "locks": [],
+    "key": "0219dbd6-3471-4aa3-9252-cb23688aa2b6",
+    "files": []
+  }
+}

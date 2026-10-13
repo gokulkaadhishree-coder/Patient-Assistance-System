@@ -1,0 +1,38 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Patient symptoms Severity",
+    "kind": "index",
+    "apiVersion": "ecs.uipath.com/v2",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "Patient Severity",
+        "kind": "Bucket"
+      }
+    ],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "Patient symptoms Severity",
+      "description": "",
+      "storageBucketReference": {
+        "name": "Patient Severity",
+        "key": "724ff652-3e95-4465-9f0e-55d2b2b93ab4",
+        "folderKey": "3b45a0c1-bafb-4fff-af84-555a651377f9"
+      },
+      "fileNameGlob": "All",
+      "dataSourceType": "StorageBucket",
+      "includeSubfolders": true,
+      "ingestionType": "Advanced",
+      "encrypted": false
+    },
+    "locks": [],
+    "key": "b1e9c426-6531-49d4-37d3-08df1390f16a",
+    "files": []
+  }
+}

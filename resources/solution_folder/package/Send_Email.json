@@ -1,0 +1,23 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Send Email",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "9208f8ea-e0dc-482e-9e65-2c1f8b194836",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "Send Email"
+    },
+    "locks": [],
+    "key": "af5ca4df-4dca-42b2-849e-85b6c26dd24b",
+    "files": []
+  }
+}

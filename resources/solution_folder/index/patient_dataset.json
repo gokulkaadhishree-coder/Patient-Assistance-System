@@ -1,0 +1,38 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "patient_dataset",
+    "kind": "index",
+    "apiVersion": "ecs.uipath.com/v2",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "gokulkaadhishree@gmail.com #2",
+        "kind": "connection"
+      }
+    ],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "patient_dataset",
+      "description": "has info about patient symptoms",
+      "connectionReference": {
+        "name": "gokulkaadhishree@gmail.com #2",
+        "key": "291c5d99-e02e-4591-86af-6dad114f55aa",
+        "folderKey": "7962c79d-8919-4185-b73e-b10044af06b5"
+      },
+      "fileNameGlob": "XLSX",
+      "dataSourceType": "Connection",
+      "includeSubfolders": true,
+      "ingestionType": "Basic",
+      "encrypted": false
+    },
+    "locks": [],
+    "key": "b2b1774a-5276-4fe0-d68d-08df126a35df",
+    "files": []
+  }
+}

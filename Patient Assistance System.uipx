@@ -1,0 +1,38 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.04.0",
+  "SolutionId": "6c9f95de-1cc1-4198-bffc-08df14c08e78",
+  "Projects": [
+    {
+      "Type": "ProcessOrchestration",
+      "ProjectRelativePath": "Maestro BPMN/project.uiproj",
+      "Id": "324ff897-68a8-4599-8a3c-d4986df476df"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "Severity Analysis Agent/project.uiproj",
+      "Id": "24772cc4-ac5d-47d6-a100-85458ed8bde1"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "Email Generation Agent/project.uiproj",
+      "Id": "5687693a-26ba-4ed5-9318-23e17486d94b"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "Query Assistance Agent/project.uiproj",
+      "Id": "e965a31f-c974-46b7-8a30-1c84801140d7"
+    },
+    {
+      "Type": "WebApp",
+      "ProjectRelativePath": "Doctor Approval/project.uiproj",
+      "Id": "7601f8a7-5932-408d-99d7-91097e0b0220"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "Send Email/project.uiproj",
+      "Id": "9208f8ea-e0dc-482e-9e65-2c1f8b194836"
+    }
+  ],
+  "AutomationHubIdeaUrl": null
+}

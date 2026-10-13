@@ -1,0 +1,44 @@
+{
+  "fileName": "evaluation-set-default.json",
+  "id": "62203893-3477-4448-8ecd-3fb1ecbd99e8",
+  "name": "Default Evaluation Set",
+  "batchSize": 10,
+  "timeoutMinutes": 20,
+  "evaluatorRefs": [
+    "6a9ffa83-f493-4812-8f02-f1fe24229b35"
+  ],
+  "evaluations": [
+    {
+      "id": "d1bf4ceb-d922-4355-96dd-49726e9e5a1a",
+      "name": "Debug Run 9/16/2026, 4:15:47 PM",
+      "inputs": {
+        "name": "Marisol Vega",
+        "age": 46,
+        "gender": "Female",
+        "symptoms": "persistent cough, sore throat, fatigue",
+        "symptomsDuration": "8 days",
+        "severity": "Moderate",
+        "action": "Schedule a follow-up appointment"
+      },
+      "expectedOutput": {
+        "email": "Dear Marisol Vega,\n\nAge: 46\nGender: Female\nReported symptoms: persistent cough, sore throat, fatigue\nSymptom duration: 8 days\nSeverity: Moderate\n\nRecommended action: Schedule a follow-up appointment\n\nBest regards,\nCare Team"
+      },
+      "expectedAgentBehavior": "",
+      "simulationInstructions": "",
+      "simulateInput": false,
+      "inputGenerationInstructions": "",
+      "simulateTools": false,
+      "evalSetId": "62203893-3477-4448-8ecd-3fb1ecbd99e8",
+      "createdAt": "2026-09-16T10:45:47.540Z",
+      "updatedAt": "2026-09-16T10:45:47.540Z",
+      "source": "firstSuccessfulRun"
+    }
+  ],
+  "modelSettings": [],
+  "agentMemoryEnabled": false,
+  "agentMemorySettings": [],
+  "lineByLineEvaluation": false,
+  "createdAt": "2026-09-16T10:41:13.379Z",
+  "updatedAt": "2026-09-16T10:45:47.540Z",
+  "category": 1
+}
